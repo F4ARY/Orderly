@@ -1,12 +1,36 @@
 ﻿<Window x:Class="Orderly.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Orderly"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Orderly - Password manager" Height="702.066" Width="465.311" ResizeMode="CanMinimize">
+    <Grid x:Name="LoginScreen" Background="#FF275DAD" ScrollViewer.HorizontalScrollBarVisibility="Visible" >
+        <Label Content="Orderly" HorizontalAlignment="Left" Margin="87,46,0,0" VerticalAlignment="Top" Height="115" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="Microsoft JhengHei Light" FontSize="72"/>
+        <TextBox
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            VerticalAlignment="Top"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            MaxWidth="400" 
+            materialDesign:HintAssist.Hint="Email" Margin="78,247,92,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft JhengHei"/>
+        <PasswordBox
+            Style="{StaticResource MaterialDesignFilledPasswordBox}"
+            VerticalAlignment="Top"
+            materialDesign:HintAssist.Hint="Password" Margin="78,332,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Microsoft JhengHei Light" />
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="147,460,140,149" Background="#FFEF626C" BorderBrush="#FFF97F87" Foreground="White" Height="Auto">
+            <TextBlock
+                Text="Login" />
+        </Button>
     </Grid>
 </Window>

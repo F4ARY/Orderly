@@ -10,5 +10,9 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("risorse/icona1024.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("risorse/icona500x500.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grpc_csharp_ext.x86.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grpc_csharp_ext.x64.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libgrpc_csharp_ext.x64.so")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libgrpc_csharp_ext.x64.dylib")]
 
 

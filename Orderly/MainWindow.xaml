@@ -20,7 +20,7 @@
                 <GradientStop Color="#FF00B4D8" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Grid x:Name="GridRegister" HorizontalAlignment="Left" Height="673" VerticalAlignment="Top" Width="459" d:IsHidden="True">
+        <Grid x:Name="GridRegister" HorizontalAlignment="Left" Height="673" VerticalAlignment="Top" Width="459">
             <Label Content="Orderly" HorizontalAlignment="Left" Margin="78,47,0,0" VerticalAlignment="Top" Height="115" Width="295" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontSize="72"/>
             <TextBox x:Name="tbEmailRegistrazione"
                 Style="{StaticResource MaterialDesignFilledTextBox}"
@@ -33,17 +33,17 @@
                 Style="{StaticResource MaterialDesignFilledPasswordBox}"
                 VerticalAlignment="Top"
                 materialDesign:HintAssist.Hint="Password" Margin="78,335,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
-            <Button x:Name="bntCancelRegister"
+            <Button x:Name="btnCancelRegister"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="263,539,71,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="bntCancelRegister_Click">
+                ToolTip="Cancel register" Margin="266,486,68,140" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="bntCancelRegister_Click">
                 <TextBlock
                     Text="Cancel" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
             </Button>
             <Button x:Name="btnRegisterRegister"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="78,539,256,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="btnRegister_Click">
+                ToolTip="Register an account" Margin="81,486,253,140" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="RegistraUtente">
                 <TextBlock
                     Text="Register" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
             </Button>
@@ -51,6 +51,11 @@
                 Style="{StaticResource MaterialDesignFilledPasswordBox}"
                 VerticalAlignment="Top"
                 materialDesign:HintAssist.Hint="Repeat Password" Margin="78,416,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            <ProgressBar x:Name="pbRegistrazione"
+  Style="{StaticResource MaterialDesignCircularProgressBar}"
+  Value="0"
+  IsIndeterminate="True" Margin="220,544,202,92" Height="Auto" Width="Auto" Foreground="White" Visibility="Hidden" />
+            <TextBlock x:Name="tbInfoRegistrazione" HorizontalAlignment="Center" Margin="10,599,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="302" Foreground="White" FontFamily="/Orderly;component/Fonts/#Comfortaa"/>
         </Grid>
         <Grid x:Name="GridLogin" HorizontalAlignment="Left" Height="673" VerticalAlignment="Top" Width="459" d:IsHidden="True">
             <Label Content="Orderly" HorizontalAlignment="Left" Margin="78,47,0,0" VerticalAlignment="Top" Height="115" Width="295" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontSize="72"/>
@@ -68,17 +73,18 @@
             <Button x:Name="btnLogin"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="164,461,170,165" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto">
+            ToolTip="Login" Margin="164,461,170,165" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto">
                 <TextBlock
                 Text="Login" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
             </Button>
             <Button x:Name="btnRegister"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 materialDesign:ButtonAssist.CornerRadius="25"
-                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="164,539,170,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="btnRegister_Click">
+                ToolTip="Create an account" Margin="164,539,170,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="btnRegister_Click">
                 <TextBlock
                     Text="Register" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
             </Button>
+
         </Grid>
         <Button x:Name="btnChiudi" Content="✖" HorizontalAlignment="Left" Margin="416,0,-6,0" VerticalAlignment="Top" Width="49" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontWeight="Bold" Foreground="White" Click="ChiudiApp" Background="{x:Null}" BorderBrush="{x:Null}"/>
         <Button x:Name="btnMinimizza" HorizontalAlignment="Left" Margin="367,0,0,0" VerticalAlignment="Top" Width="49" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontWeight="Bold" Foreground="White" Click="Minimizza" Content="–" Background="{x:Null}" BorderBrush="{x:Null}"/>

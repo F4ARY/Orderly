@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FirebaseAdmin;
+using FirebaseAdmin.Auth;
+using Google.Apis.Auth.OAuth2;
+using Google.Cloud.Firestore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DocumentReference = Google.Cloud.Firestore.DocumentReference;
 using Forms = System.Windows.Forms;
-using FireSharp.Config;
-using FireSharp.Response;
-using FireSharp.Interfaces;
 
 namespace Orderly {
     /// <summary>
@@ -107,6 +109,56 @@ namespace Orderly {
         private void bntCancelRegister_Click(object sender, RoutedEventArgs e) {
             finestraAttiva = FinestraAttiva.Login;
             AggiornaFinestra();
+        }
+
+        private void RegistraUtente(object sender, RoutedEventArgs e) {
+
+            AggiungiUtente();
+        }
+
+        private async void AggiungiUtente() {
+
+            tbEmailRegistrazione.IsEnabled = false;
+            tbPassword1Registrazione.IsEnabled = false;
+            tbPassword2Registrazione.IsEnabled = false;
+            btnRegisterRegister.IsEnabled = false;
+            btnCancelRegister.IsEnabled = false;
+            pbRegistrazione.Visibility = Visibility.Visible;
+
+            var defaultApp = FirebaseApp.Create(new AppOptions() {
+                Credential = GoogleCredential.GetApplicationDefault(),
+                ProjectId = "orderly-aa433",
+            });
+
+            FirebaseAuth.GetAuth(defaultApp);
+
+            UserRecordArgs args = new UserRecordArgs() {
+                Email = tbEmailRegistrazione.Text,
+                EmailVerified = false,
+                Password = tbPassword1Registrazione.Password,
+                Disabled = false,
+            };
+            UserRecord userRecord = await FirebaseAuth.DefaultInstance.CreateUserAsync(args);
+
+            tbEmailRegistrazione.IsEnabled = true;
+            tbPassword1Registrazione.IsEnabled = true;
+            tbPassword2Registrazione.IsEnabled = true;
+            btnRegisterRegister.IsEnabled = true;
+            btnCancelRegister.IsEnabled = true;
+            pbRegistrazione.Visibility = Visibility.Hidden;
+            tbInfoRegistrazione.Text = "Account created successfully, please check you inbox";
+
+            /*
+            FirestoreDb db = FirestoreDb.Create("orderly-aa433");
+            DocumentReference docRef = db.Collection("users").Document("aturing");
+            Dictionary<string, object> user = new Dictionary<string, object>
+            {
+                { "First", "Alan" },
+                { "Middle", "Mathison" },
+                { "Last", "Turing" },
+                { "Born", 1912 }
+            };
+            await docRef.SetAsync(user);*/
         }
     }
 }

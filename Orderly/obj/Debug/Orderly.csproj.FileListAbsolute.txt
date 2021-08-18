@@ -1,5 +1,4 @@
 C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly.csproj.App.config
-C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly.csproj.AssemblyReference.cache
 C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly_MarkupCompile.cache
 C:\Users\georg\Desktop\Orderly\Orderly\bin\Debug\Orderly.exe.config
 C:\Users\georg\Desktop\Orderly\Orderly\bin\Debug\Orderly.exe
@@ -35,3 +34,7 @@ C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly.exe
 C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly.pdb
 C:\Users\georg\Desktop\Orderly\Orderly\bin\Debug\ShowMeTheXAML.dll
 C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\App.baml
+C:\Users\georg\Desktop\Orderly\Orderly\bin\Debug\Risorse\icona500x500.ico
+C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly_Content.g.cs
+C:\Users\georg\Desktop\Orderly\Orderly\bin\Debug\Risorse\icona1024.ico
+C:\Users\georg\Desktop\Orderly\Orderly\obj\Debug\Orderly.csproj.AssemblyReference.cache

@@ -1,7 +1,7 @@
-﻿<Window x:Class="Orderly.MainWindow"
+﻿<Window x:Name="_MainWindow" x:Class="Orderly.MainWindow"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="White"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
@@ -11,26 +11,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Orderly"
         mc:Ignorable="d"
-        Title="Orderly - Password manager" Height="702.066" Width="465.311" ResizeMode="CanMinimize">
-    <Grid x:Name="LoginScreen" Background="#FF275DAD" ScrollViewer.HorizontalScrollBarVisibility="Visible" >
-        <Label Content="Orderly" HorizontalAlignment="Left" Margin="87,46,0,0" VerticalAlignment="Top" Height="115" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="Microsoft JhengHei Light" FontSize="72"/>
-        <TextBox
+        Title="Orderly - Password manager" Height="702.066" Width="465.311" ResizeMode="CanMinimize" MouseDown="_MainWindow_MouseDown" Icon="icona1024.png">
+
+    <Grid x:Name="mainGrid" ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="0,0,0,-1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.1,0">
+                <GradientStop Color="#FF275DAD"/>
+                <GradientStop Color="#FF00B4D8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid x:Name="GridRegister" HorizontalAlignment="Left" Height="673" VerticalAlignment="Top" Width="459" d:IsHidden="True">
+            <Label Content="Orderly" HorizontalAlignment="Left" Margin="78,47,0,0" VerticalAlignment="Top" Height="115" Width="295" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontSize="72"/>
+            <TextBox x:Name="tbEmailRegistrazione"
+                Style="{StaticResource MaterialDesignFilledTextBox}"
+                VerticalAlignment="Top"
+                AcceptsReturn="True"
+                TextWrapping="Wrap"
+                MaxWidth="400" 
+                materialDesign:HintAssist.Hint="Email" Margin="78,247,92,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa"/>
+            <PasswordBox x:Name="tbPassword1Registrazione"
+                Style="{StaticResource MaterialDesignFilledPasswordBox}"
+                VerticalAlignment="Top"
+                materialDesign:HintAssist.Hint="Password" Margin="78,335,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            <Button x:Name="bntCancelRegister"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="263,539,71,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="bntCancelRegister_Click">
+                <TextBlock
+                    Text="Cancel" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            </Button>
+            <Button x:Name="btnRegisterRegister"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="78,539,256,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="btnRegister_Click">
+                <TextBlock
+                    Text="Register" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            </Button>
+            <PasswordBox x:Name="tbPassword2Registrazione"
+                Style="{StaticResource MaterialDesignFilledPasswordBox}"
+                VerticalAlignment="Top"
+                materialDesign:HintAssist.Hint="Repeat Password" Margin="78,416,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+        </Grid>
+        <Grid x:Name="GridLogin" HorizontalAlignment="Left" Height="673" VerticalAlignment="Top" Width="459" d:IsHidden="True">
+            <Label Content="Orderly" HorizontalAlignment="Left" Margin="78,47,0,0" VerticalAlignment="Top" Height="115" Width="295" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#00000000" Foreground="#DDFFFFFF" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontSize="72"/>
+            <TextBox
             Style="{StaticResource MaterialDesignFilledTextBox}"
             VerticalAlignment="Top"
             AcceptsReturn="True"
             TextWrapping="Wrap"
             MaxWidth="400" 
-            materialDesign:HintAssist.Hint="Email" Margin="78,247,92,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft JhengHei"/>
-        <PasswordBox
+            materialDesign:HintAssist.Hint="Email" Margin="78,247,92,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa"/>
+            <PasswordBox
             Style="{StaticResource MaterialDesignFilledPasswordBox}"
             VerticalAlignment="Top"
-            materialDesign:HintAssist.Hint="Password" Margin="78,332,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Microsoft JhengHei Light" />
-        <Button
+            materialDesign:HintAssist.Hint="Password" Margin="78,335,92,0" Foreground="White" HorizontalContentAlignment="Center" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            <Button x:Name="btnLogin"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="147,460,140,149" Background="#FFEF626C" BorderBrush="#FFF97F87" Foreground="White" Height="Auto">
-            <TextBlock
-                Text="Login" />
-        </Button>
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="164,461,170,165" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto">
+                <TextBlock
+                Text="Login" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            </Button>
+            <Button x:Name="btnRegister"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                materialDesign:ButtonAssist.CornerRadius="25"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="164,539,170,87" Background="{x:Null}" BorderBrush="White" Foreground="White" Height="Auto" Click="btnRegister_Click">
+                <TextBlock
+                    Text="Register" FontFamily="/Orderly;component/Fonts/#Comfortaa" />
+            </Button>
+        </Grid>
+        <Button x:Name="btnChiudi" Content="✖" HorizontalAlignment="Left" Margin="416,0,-6,0" VerticalAlignment="Top" Width="49" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontWeight="Bold" Foreground="White" Click="ChiudiApp" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnMinimizza" HorizontalAlignment="Left" Margin="367,0,0,0" VerticalAlignment="Top" Width="49" FontFamily="/Orderly;component/Fonts/#Comfortaa" FontWeight="Bold" Foreground="White" Click="Minimizza" Content="–" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Label x:Name="lbDevText" Content="Dev Build 18/08/2021" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontFamily="/Orderly;component/Fonts/#Comfortaa Light" Height="18" Width="165" FontSize="10" VerticalContentAlignment="Center" Margin="10,655,0,0"/>
+
     </Grid>
+
 </Window>
